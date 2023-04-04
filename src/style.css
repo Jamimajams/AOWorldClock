@@ -45,11 +45,11 @@ select {
 .date {
   font-size: 15px;
   color: gray;
+  font-weight: lighter;
 }
 .time {
-  font-size: 40px;
+  font-size: 35px;
   text-align: right;
-  padding-right: 40px;
   font-weight: bold;
   letter-spacing: 2px;
 }

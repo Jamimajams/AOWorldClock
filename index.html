@@ -10,6 +10,8 @@
 "
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.43/moment-timezone-with-data-1970-2030.min.js"></script>
     <title>World Clock Jams</title>
   </head>
   <body>
@@ -24,32 +26,32 @@
         </select>
       </div>
       <div class="row">
-        <div class="col-6 city">
+        <div class="col-6 city" id="losAngeles">
           Los Angeles 🇺🇸
-          <div class="date">July 25th 2023</div>
+          <div class="date"></div>
         </div>
-        <div class="col-6 time">15:09<small>pm</small></div>
+        <div class="col-6 los-angeles time"></div>
       </div>
       <div class="row">
-        <div class="col-6 city">
+        <div class="col-6 city" id="toronto">
           Toronto 🇨🇦
-          <div class="date">August 28th 2023</div>
+          <div class="date"></div>
         </div>
-        <div class="col-6 time">20:49<small>pm</small></div>
+        <div class="col-6 toronto time"></div>
       </div>
       <div class="row">
-        <div class="col-6 city">
+        <div class="col-6 city" id="paris">
           Paris 🇫🇷
-          <div class="date">June 21st 2023</div>
+          <div class="date"></div>
         </div>
-        <div class="col-6 time">11:03<small>am</small></div>
+        <div class="col-6 paris time"></div>
       </div>
       <div class="row">
-        <div class="col-6 city">
-          Mexico 🇲🇽
-          <div class="date">October 23rd 2023</div>
+        <div class="col-6 city" id="cancun">
+          Cancun 🇲🇽
+          <div class="date"></div>
         </div>
-        <div class="col-6 time">10:30<small>am</small></div>
+        <div class="col-6 cancun time"></div>
       </div>
     </div>
     <hr />

@@ -58,10 +58,11 @@ function changeTimezone(event) {
           </div>
         </div>`;
   citiesElement.innerHTML = selectedSearch + citiesElement.innerHTML;
+
+  setInterval(1000);
 }
 
 updateTime();
 setInterval(updateTime, 1000);
-setInterval(changeTimezone, 1000);
 let chooseCitySelect = document.querySelector("#choose-city");
 chooseCitySelect.addEventListener("change", changeTimezone);

@@ -6,7 +6,7 @@ function updateTime() {
   let losAngelesTime = moment().tz("America/Los_Angeles");
   losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
   losAngelesTimeElement.innerHTML = losAngelesTime.format(
-    "H:mm:ss[<small>]A[</small>]"
+    "HH:mm:ss[<small>]A[</small>]"
   );
 
   // Toronto
@@ -16,7 +16,7 @@ function updateTime() {
   let torontoTime = moment().tz("America/Toronto");
   torontoDateElement.innerHTML = torontoTime.format("MMMM Do YYYY");
   torontoTimeElement.innerHTML = torontoTime.format(
-    "H:mm:ss[<small>]A[</small>]"
+    "HH:mm:ss[<small>]A[</small>]"
   );
 
   // Paris
@@ -25,7 +25,7 @@ function updateTime() {
   let parisTimeElement = document.querySelector(".paris.time");
   let parisTime = moment().tz("Europe/Paris");
   parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
-  parisTimeElement.innerHTML = parisTime.format("H:mm:ss[<small>]A[</small>]");
+  parisTimeElement.innerHTML = parisTime.format("HH:mm:ss[<small>]A[</small>]");
 
   // Cancun
   let cancunElement = document.querySelector("#cancun");
@@ -34,7 +34,7 @@ function updateTime() {
   let cancunTime = moment().tz("America/Cancun");
   cancunDateElement.innerHTML = cancunTime.format("MMMM Do YYYY");
   cancunTimeElement.innerHTML = cancunTime.format(
-    "H:mm:ss[<small>]A[</small>]"
+    "HH:mm:ss[<small>]A[</small>]"
   );
 }
 
@@ -53,16 +53,15 @@ function changeTimezone(event) {
             <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="col-6 time">${cityTimezoneTime.format(
-            "H:mm:ss"
+            "HH:mm:ss"
           )}<small>${cityTimezoneTime.format("A")}</small>
           </div>
         </div>`;
   citiesElement.innerHTML = selectedSearch + citiesElement.innerHTML;
-
-  setInterval(1000);
 }
 
 updateTime();
 setInterval(updateTime, 1000);
+
 let chooseCitySelect = document.querySelector("#choose-city");
 chooseCitySelect.addEventListener("change", changeTimezone);

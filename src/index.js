@@ -1,8 +1,8 @@
 function updateTime() {
   // Los Angeles
-  let losAngelesElement = document.querySelector("#losAngeles");
-  let losAngelesDateElement = losAngelesElement.querySelector(".date");
-  let losAngelesTimeElement = document.querySelector(".time");
+  let losAngelesElement = document.querySelector("#los-angeles");
+  let losAngelesDateElement = losAngelesElement.querySelector("#date");
+  let losAngelesTimeElement = document.querySelector(".los-angeles.time");
   let losAngelesTime = moment().tz("America/Los_Angeles");
   losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM Do YYYY");
   losAngelesTimeElement.innerHTML = losAngelesTime.format(
@@ -47,47 +47,21 @@ function changeTimezone(event) {
   let cityTimezoneTime = moment().tz(cityTimezone);
 
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = `<div class="row">
+  let selectedSearch = `<div class="row">
           <div class="col-6 city">
             ${cityName}
             <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
           </div>
-          <div class="col-6 los-angeles time">${cityTimezoneTime.format(
-            "H:mm:ss"
-          )}<small>${cityTimezoneTime.format("A")}</small>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 city">
-            ${cityName}
-            <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
-          </div>
-          <div class="col-6 toronto time">${cityTimezoneTime.format(
-            "H:mm:ss"
-          )}<small>${cityTimezoneTime.format("A")}</small>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 city">
-            ${cityName}
-            <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
-          </div>
-          <div class="col-6 paris time">${cityTimezoneTime.format(
-            "H:mm:ss"
-          )}<small>${cityTimezoneTime.format("A")}</small>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6 city">
-           ${cityName}
-            <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
-          </div>
-          <div class="col-6 cancun time">${cityTimezoneTime.format(
+          <div class="col-6 time">${cityTimezoneTime.format(
             "H:mm:ss"
           )}<small>${cityTimezoneTime.format("A")}</small>
           </div>
         </div>`;
+  citiesElement.innerHTML = selectedSearch + citiesElement.innerHTML;
 }
 
+updateTime();
+setInterval(updateTime, 1000);
+setInterval(changeTimezone, 1000);
 let chooseCitySelect = document.querySelector("#choose-city");
 chooseCitySelect.addEventListener("change", changeTimezone);

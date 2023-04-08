@@ -31,12 +31,11 @@ select {
   text-transform: capitalize;
   font-weight: bolder;
 }
-
 .row:first-of-type {
-  border-bottom: none;
+  border-top: none;
 }
 .row {
-  border-bottom: 1px dashed rgba(128, 128, 128, 0.6);
+  border-top: 1px dashed rgba(128, 128, 128, 0.6);
   padding: 20px;
 }
 .row:last-child {

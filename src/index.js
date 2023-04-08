@@ -40,6 +40,9 @@ function updateTime() {
 
 function changeTimezone(event) {
   let cityTimezone = event.target.value;
+  if (cityTimezone === "current") {
+    cityTimezone = moment.tz.guess();
+  }
   let cityName = cityTimezone.replace("_", " ").split("/")[1];
   let cityTimezoneTime = moment().tz(cityTimezone);
 

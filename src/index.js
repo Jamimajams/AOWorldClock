@@ -37,50 +37,52 @@ function updateTime() {
     "H:mm:ss[<small>]A[</small>]"
   );
 }
-updateTime();
-setInterval(updateTime, 1000);
 
 function changeTimezone(event) {
   let cityTimezone = event.target.value;
+  let cityName = cityTimezone.replace("_", " ").split("/")[1];
   let cityTimezoneTime = moment().tz(cityTimezone);
 
   let citiesElement = document.querySelector("#cities");
-  citiesElement.innerHTML = cityTimezone;
-  citiesElement = `<div class="row">
+  citiesElement.innerHTML = `<div class="row">
           <div class="col-6 city">
-            ${cityTimezone}
+            ${cityName}
             <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="col-6 los-angeles time">${cityTimezoneTime.format(
-            "H:mm:ss[<small>]A[</small>]"
-          )}</div>
+            "H:mm:ss"
+          )}<small>${cityTimezoneTime.format("A")}</small>
+          </div>
         </div>
         <div class="row">
           <div class="col-6 city">
-            ${cityTimezone}
+            ${cityName}
             <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="col-6 toronto time">${cityTimezoneTime.format(
-            "H:mm:ss[<small>]A[</small>]"
-          )}</div>
+            "H:mm:ss"
+          )}<small>${cityTimezoneTime.format("A")}</small>
+          </div>
         </div>
         <div class="row">
           <div class="col-6 city">
-            ${cityTimezone}
+            ${cityName}
             <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="col-6 paris time">${cityTimezoneTime.format(
-            "H:mm:ss[<small>]A[</small>]"
-          )}</div>
+            "H:mm:ss"
+          )}<small>${cityTimezoneTime.format("A")}</small>
+          </div>
         </div>
         <div class="row">
           <div class="col-6 city">
-           ${cityTimezone}
+           ${cityName}
             <div class="date">${cityTimezoneTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="col-6 cancun time">${cityTimezoneTime.format(
-            "H:mm:ss[<small>]A[</small>]"
-          )}</div>
+            "H:mm:ss"
+          )}<small>${cityTimezoneTime.format("A")}</small>
+          </div>
         </div>`;
 }
 
